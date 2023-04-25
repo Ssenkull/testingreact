@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Montserrat';
 }
 
 :root {
@@ -55,7 +56,10 @@ main{
 }
 
 .home-title{
+  font-size: 31px;
   line-height: 42px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .input-n-btn{
@@ -65,13 +69,22 @@ main{
 }
 
 .home-input{
-  width: 80%;
+  width: 30%;
+  border-radius: 10px;
+  border: none;
   height: 50px;
   margin-bottom: 23px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .home-btn{
   font-size: 16px;
   padding: 18px;
+  cursor: pointer;
+}
+
+@media(max-width: 600px){
+  .home-input{
+    width: 80%;
+  }
 }

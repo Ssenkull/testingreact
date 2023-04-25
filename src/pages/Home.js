@@ -17,7 +17,7 @@ const Home = () => {
     event.preventDefault();
 
     if (!inputValue.trim() || !nameValue.trim()) {
-      alert("Будь ласка, введіть відповідь та ім'я");
+      alert("Please enter your name and message");
       return;
     }
 
@@ -26,6 +26,7 @@ const Home = () => {
       message: inputValue,
     };
     setInputValue("");
+    setNameValue("");
     setIsFormSubmitted(true);
 
     sendFormData(formData);
@@ -53,18 +54,18 @@ const Home = () => {
   return (
     <>
       <h1 className="home-title">Welcome to the Home Page</h1>
-      <p>Привіт, як життя?</p>
+      <p className="home-text">Here you can leave some message for creator</p>
       <form onSubmit={submitHandler}>
         <div className="input-n-btn">
-        <label htmlFor="name">Ім'я:</label>
+        <label htmlFor="name">Your Name:</label>
           <input className="home-input" id="name" type="text" value={nameValue} onChange={nameChangeHandler} />
-          <label htmlFor="name">Повідомлення:</label>
+          <label htmlFor="name">Your Message:</label>
             <input className="home-input" type="text" value={inputValue} onChange={inputChangeHandler}/>
             <button className="home-btn" type='submit'>Надіслати відповідь</button>
         </div>
         {isFormSubmitted && (
           <p>
-            Відповідь успішно надіслано! Богдан скоро вам відповість ну або ж не скоро....
+            Response sent successfully! <br /> Bogdan will answer you soon, or maybe not ....
           </p>
         )}
       </form>
