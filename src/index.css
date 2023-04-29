@@ -83,6 +83,28 @@ main{
   cursor: pointer;
 }
 
+/* light theme  */
+
+html[data-theme='light'] {
+  --button-text-color: #252525;
+  --button-background-color: #f9d4ff;
+  --button-border-color: #4e005c;
+
+  --input-text-color: #252525;
+  --input-placeholder-text-color: #a7a7a7;
+  --input-background-color: #ffffff;
+  --input-border-color: #4e005c;
+
+  --background-color: #dfdfdf;
+  --icon-color: #4e005c;
+}
+
+.app__container{
+  background-color: var(--background-color);
+  transition: background-color 200ms linear;
+}
+
+
 @media(max-width: 600px){
   .home-input{
     width: 80%;
