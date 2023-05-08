@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import ThemeButton from "../components/ThemeButton";
-import {useTheme} from "../hooks/use-theme";
+
+
 
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
@@ -8,15 +9,11 @@ const Home = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   // const [theme, setTheme] = useState('dark');
 
-  const{theme, setTheme} = useTheme();
 
   // const toggleTheme = () => {
   //   setTheme(theme === 'dark' ? 'light' : 'dark')
   // }
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
 
   const inputChangeHandler = (event) => {
     setInputValue(event.target.value);
@@ -65,8 +62,7 @@ const Home = () => {
   };
 
   return (
-    <div className="app__container">
-    <button onClick={toggleTheme}>Swtich theme</button>
+    <>
       <h1 className="home-title">Welcome to the Home Page</h1>
       <p className="home-text">Here you can leave some message for creator</p>
       <form onSubmit={submitHandler}>
@@ -83,7 +79,7 @@ const Home = () => {
           </p>
         )}
       </form>
-    </div>
+    </>
   );
 };
 
